@@ -24,5 +24,6 @@ public class SimplePlayerRotation : MonoBehaviour
         float angleDeg = (180 / Mathf.PI) * angleRad;
 
         this.transform.rotation = Quaternion.Euler(0,0,angleDeg);
+        Debug.Log(Input.GetAxis("Mouse X"));
     }
 }
