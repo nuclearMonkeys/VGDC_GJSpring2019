@@ -13,6 +13,9 @@ public class SimplePlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown("w"))
+        {
+            Debug.Log("forward!");
+        }
     }
 }
