@@ -1,29 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class SimplePlayerRotation : MonoBehaviour
 {
-    private Vector3 lookAt;
-    // Start is called before the first frame update
-    void Start()
-    {  
-    }
-
-    // Update is called once per frame
-    void Update()
+    public float moveSpeed = 1.0f;
+    private void Update()
     {
-        Rotate();
-    }
-
-    void Rotate() {
-        lookAt = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-        float angleRad = Mathf.Atan2(lookAt.y - this.transform.position.y, lookAt.x - this.transform.position.x);
-
-        float angleDeg = (180 / Mathf.PI) * angleRad;
-
-        this.transform.rotation = Quaternion.Euler(0,0,angleDeg);
-        Debug.Log(Input.GetAxis("Mouse X"));
+        float horizontal = Input.GetAxis("Mouse X") * Time.deltaTime * moveSpeed;
+        float vertical = Input.GetAxis("Mouse Y") * Time.deltaTime * moveSpeed;
+        float angle = Mathf.Atan2(horizontal, vertical) * Mathf.Rad2Deg;
+        Vector3 rotationVector = new Vector3(0, 0,-angle*moveSpeed);
+        Quaternion rotation = Quaternion.Euler(rotationVector);
+        this.transform.rotation = rotation;
+        Debug.Log(angle);
     }
 }
