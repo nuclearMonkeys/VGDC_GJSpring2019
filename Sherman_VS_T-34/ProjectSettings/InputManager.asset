@@ -374,7 +374,7 @@ InputManager:
     axis: 0
     joyNum: 2
   - serializedVersion: 3
-    m_Name: Hor2
+    m_Name: LHor2
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -406,7 +406,7 @@ InputManager:
     axis: 1
     joyNum: 2
   - serializedVersion: 3
-    m_Name: Vert2
+    m_Name: LVert2
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 

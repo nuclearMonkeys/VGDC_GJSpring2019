@@ -11,8 +11,8 @@ public class test_char_mvmt : MonoBehaviour
     
     public void Update()
     {
-        float translation_horiz = Input.GetAxis("Hor" + player) * speed;
-        float translation_vert = Input.GetAxis("Vert" + player) * speed;
+        float translation_horiz = Input.GetAxis("LHor" + player) * speed;
+        float translation_vert = Input.GetAxis("LVert" + player) * speed;
 
         rb.velocity = new Vector3(translation_horiz, translation_vert);
         /*
