@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5450091311817032089}
   - component: {fileID: 5450091311817032071}
-  - component: {fileID: 5450091311817032088}
+  - component: {fileID: 147967762710001564}
   m_Layer: 0
   m_Name: Box
-  m_TagString: Untagged
+  m_TagString: PlayerTwo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5450091311817032088
+--- !u!114 &147967762710001564
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -90,7 +90,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5450091311817032090}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ef7e38ce251a9f4a909f15929a74866, type: 3}
+  m_Script: {fileID: 11500000, guid: e8d0f0f47e3b8d34295048337a276c3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 5450091312022394699}
   m_Layer: 0
   m_Name: BulletSpawnPoint
-  m_TagString: Untagged
+  m_TagString: PlayerTwo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -204,10 +204,10 @@ GameObject:
   - component: {fileID: 5450091312664417405}
   - component: {fileID: 5450091312664417406}
   - component: {fileID: 5450091312664417407}
-  - component: {fileID: 5450091312664417393}
+  - component: {fileID: 6091029023201189241}
   m_Layer: 0
   m_Name: Player2
-  m_TagString: Untagged
+  m_TagString: PlayerTwo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -274,7 +274,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5450091312664417393
+--- !u!114 &6091029023201189241
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -283,9 +283,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5450091312664417394}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5860591784add4146b6eb4645975007a, type: 3}
+  m_Script: {fileID: 11500000, guid: 78907e0c8a9ae7c438363d217c58e4ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
-  speed: 100
-  rb: {fileID: 5450091312664417407}
+  speed: 150

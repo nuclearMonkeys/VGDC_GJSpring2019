@@ -3,17 +3,20 @@
 public class AbstractBullet : MonoBehaviour
 {
     public float speed;
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
     public int damage = 10;
-    GameManager gameManager;
+    public float timeLeft;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
+    private void Start()
+    {
+        Destroy(gameObject, timeLeft);
+    }
+
     void Update()
     {
         rb.velocity = Vector2.up * speed;
@@ -21,23 +24,15 @@ public class AbstractBullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("PlayerOne")) {
-            other.gameObject.GetComponent<SimplePlayerMovement>().gameManager.numOfTWins++;
-            gameManager = other.gameObject.GetComponent<SimplePlayerMovement>().gameManager;
+        if (other.gameObject.CompareTag("PlayerOne"))
+        {
+            GameManager.Instance.numOfTWins++;
             other.gameObject.GetComponent<PlayerHealth>().currentHealth -= 10;
-            //Destroy(other.gameObject);
-            //Destroy(this);
-            //gameManager.StartGame();
         }
-        if (other.gameObject.CompareTag("PlayerTwo")) {
-            other.gameObject.GetComponent<PlayerMovement2>().gameManager.numOfShermanWins++;
-            gameManager = other.gameObject.GetComponent<PlayerMovement2>().gameManager;
+        if (other.gameObject.CompareTag("PlayerTwo"))
+        {
+            GameManager.Instance.numOfShermanWins++;
             other.gameObject.GetComponent<PlayerHealth>().currentHealth -= 10;
-            //Destroy(other.gameObject);
-            //Destroy(this);
-            //gameManager.StartGame();
         }
-
-
     }
 }

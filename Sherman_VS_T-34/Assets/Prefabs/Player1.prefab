@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2531112517541137084}
   m_Layer: 0
   m_Name: Player1
-  m_TagString: Untagged
+  m_TagString: PlayerOne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,8 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78907e0c8a9ae7c438363d217c58e4ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
-  speed: 150.31
+  speed: 150
   rb: {fileID: 0}
 --- !u!61 &2531112517541137085
 BoxCollider2D:
@@ -109,7 +108,7 @@ GameObject:
   - component: {fileID: 2531112517712106289}
   m_Layer: 0
   m_Name: Box
-  m_TagString: Untagged
+  m_TagString: PlayerOne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -203,7 +202,7 @@ GameObject:
   - component: {fileID: 2531112517803026990}
   m_Layer: 0
   m_Name: BulletSpawnPoint
-  m_TagString: Untagged
+  m_TagString: PlayerOne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
