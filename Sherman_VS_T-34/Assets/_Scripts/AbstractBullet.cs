@@ -10,7 +10,7 @@ public class AbstractBullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -37,12 +37,7 @@ public class AbstractBullet : MonoBehaviour
             //Destroy(this);
             //gameManager.StartGame();
         }
-        if (other.gameObject.CompareTag("Wall")) {
-            print("hit");
-            rb.velocity = Vector2.Reflect(rb.velocity, other.contacts[0].normal);
-            
-            //speed = -speed;
-        }
-        
+
+
     }
 }
