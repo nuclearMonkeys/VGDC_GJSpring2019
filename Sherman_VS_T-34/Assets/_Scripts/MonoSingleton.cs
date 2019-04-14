@@ -29,6 +29,7 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T>
     {
         instance = this;
         DontDestroyOnLoad(gameObject);
+        OnAwake();
     }
 
     protected virtual void OnAwake() { }
@@ -38,6 +39,7 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T>
     void Start()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
+        OnStart();
     }
 
     protected virtual void OnStart() { }
