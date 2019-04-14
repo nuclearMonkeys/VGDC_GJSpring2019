@@ -21,7 +21,7 @@ public class SimplePlayerShoot : MonoBehaviour
     }
 
     void Shoot() {
-        GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.transform.position, Quaternion.identity);
+        GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.transform.position, bulletSpawnPoint.transform.rotation);
         //float angle = Mathf.Atan2(bullet.transform.position.y, bullet.transform.position.x) * Mathf.Rad2Deg;
         //print(transform.rotation);
         Vector3 localUp = transform.TransformDirection(Vector3.up);
@@ -29,3 +29,5 @@ public class SimplePlayerShoot : MonoBehaviour
     }
 
 }
+
+        GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.transform.position, Quaternion.identity);
