@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SimplePlayerMovement : MonoBehaviour
+public class PlayerMovement2 : MonoBehaviour
 {
     public float speed = 10.0f;
     public Rigidbody2D rb;
@@ -15,34 +15,32 @@ public class SimplePlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         float translation_horiz = 0f;
         float translation_vert = 0f;
-        if (Input.GetKey("a"))
+        if (Input.GetKey("j"))
         {
             translation_horiz = -speed * Time.deltaTime;
-            Debug.Log("Left");
+            //Debug.Log("Left");
         }
-        if (Input.GetKey("d"))
+        if (Input.GetKey("l"))
         {
-             translation_horiz = speed * Time.deltaTime;
-            Debug.Log("Right");
+            translation_horiz = speed * Time.deltaTime;
+            // Debug.Log("Right");
         }
-        if (Input.GetKey("w"))
+        if (Input.GetKey("i"))
         {
-             translation_vert = speed * Time.deltaTime;
-            Debug.Log("Up");
+            translation_vert = speed * Time.deltaTime;
+            // Debug.Log("Up");
         }
-        if (Input.GetKey("s"))
+        if (Input.GetKey("k"))
         {
-             translation_vert = -speed * Time.deltaTime;
-            Debug.Log("Down");
+            translation_vert = -speed * Time.deltaTime;
+            //  Debug.Log("Down");
         }
+
+
         //transform.Translate(translation_horiz, translation_vert, 0);
         rb.velocity = new Vector3(translation_horiz, translation_vert);
-        
-        
-        //string test = Input.GetAxis("Vertical1") + " vertical 1";
-        //string[] astrJoysticks = Input.GetJoystickNames();
-        //Debug.Log(astrJoysticks);
     }
 }
