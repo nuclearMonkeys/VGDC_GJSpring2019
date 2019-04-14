@@ -7,7 +7,7 @@ using TMPro;
 public class GameManager : MonoSingleton<GameManager>
 {
     float currentTime = 0f, startingTime = 60f;
-    public bool roundStarted = false;
+    public bool roundIsGoing = false;
     public TextMeshProUGUI timerText;
     public int numOfShermanWins = 0, numOfTWins = 0;
     public PlayerHealth p1HP, p2HP;
@@ -26,7 +26,7 @@ public class GameManager : MonoSingleton<GameManager>
     {
         float dt = Time.deltaTime;
 
-        if (roundStarted)
+        if (roundIsGoing)
         {
             currentTime = Mathf.Max(0f, currentTime - dt);
             timerText.text = ((int)currentTime).ToString();
@@ -37,7 +37,18 @@ public class GameManager : MonoSingleton<GameManager>
         LoadRandomScene();
     }
 
-    private void LoadRandomScene()
+    public void EndRound()
+    {
+        roundIsGoing = false;
+        LoadRandomScene();
+    }
+
+    private void LoadShop()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void LoadRandomScene()
     {
         SceneManager.LoadScene(Random.Range(2, SceneManager.sceneCountInBuildSettings));
     }
@@ -47,67 +58,67 @@ public class GameManager : MonoSingleton<GameManager>
         Powerups p = (Powerups)i;
         string p1 = "PlayerOne", p2 = "PlayerTwo", s = playerWithFocus == 1 ? p1 : p2;
 
-        switch (p)
-        {
-            case Powerups.NA:
-                break;
-            case Powerups.SpeedBoost:
-                {
-                    if (s == p1)
-                    {
-                        p1Mov.speed *= 2f;
-                        P1State = p;
-                    }
-                    else if (s == p2)
-                    {
-                        p2Mov.speed *= 2f;
-                        P2State = p;
-                    }
-                }
-                break;
-            case Powerups.Shield:
-                {
-                    if (s == p1)
-                    {
-                        p1HP.isInvincible = true;
-                        P1State = p;
-                    }
-                    else if (s == p2)
-                    {
-                        p2HP.isInvincible = false;
-                        P2State = p;
-                    }
-                }
-                break;
-            case Powerups.IncFirePower:
-                {
-                    if (s == p1)
-                    {
-                        p1Shoot.damagePerBullet *= 2;
-                        P1State = p;
-                    }
-                    else if (s == p2)
-                    {
-                        p1Shoot.damagePerBullet *= 2;
-                        P2State = p;
-                    }
-                }
-                break;
-            case Powerups.IncFireRate:
-                {
-                    if (s == p1)
-                    {
-                        p1Shoot.time_scale /= 2f;
-                        P1State = p;
-                    }
-                    else if (s == p2)
-                    {
-                        p1Shoot.time_scale /= 2f;
-                        P2State = p;
-                    }
-                }
-                break;
-        }
+        //switch (p)
+        //{
+        //    case Powerups.NA:
+        //        break;
+        //    case Powerups.SpeedBoost:
+        //        {
+        //            if (s == p1)
+        //            {
+        //                p1Mov.speed *= 2f;
+        //                P1State = p;
+        //            }
+        //            else if (s == p2)
+        //            {
+        //                p2Mov.speed *= 2f;
+        //                P2State = p;
+        //            }
+        //        }
+        //        break;
+        //    case Powerups.Shield:
+        //        {
+        //            if (s == p1)
+        //            {
+        //                p1HP.isInvincible = true;
+        //                P1State = p;
+        //            }
+        //            else if (s == p2)
+        //            {
+        //                p2HP.isInvincible = false;
+        //                P2State = p;
+        //            }
+        //        }
+        //        break;
+        //    case Powerups.IncFirePower:
+        //        {
+        //            if (s == p1)
+        //            {
+        //                p1Shoot.damagePerBullet *= 2;
+        //                P1State = p;
+        //            }
+        //            else if (s == p2)
+        //            {
+        //                p1Shoot.damagePerBullet *= 2;
+        //                P2State = p;
+        //            }
+        //        }
+        //        break;
+        //    case Powerups.IncFireRate:
+        //        {
+        //            if (s == p1)
+        //            {
+        //                p1Shoot.time_scale /= 2f;
+        //                P1State = p;
+        //            }
+        //            else if (s == p2)
+        //            {
+        //                p1Shoot.time_scale /= 2f;
+        //                P2State = p;
+        //            }
+        //        }
+        //        break;
+        //}
 
         if (s == p1)
         {

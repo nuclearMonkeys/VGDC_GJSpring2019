@@ -49,13 +49,14 @@ public class UIManager : MonoSingleton<UIManager>
     {
         if (i == 1)
         {
-            module.horizontalAxis = "DHor1";
-            module.verticalAxis = "DVert1";
+            module.horizontalAxis = "DHor2";
+            module.verticalAxis = "DVert2";
         }
         else if (i == 2)
         {
-            module.horizontalAxis = "DHor2";
-            module.verticalAxis = "DVert2";
+            module.horizontalAxis = "DHor1";
+            module.verticalAxis = "DVert1";
+            GameManager.Instance.LoadRandomScene();
         }
     }
 }
