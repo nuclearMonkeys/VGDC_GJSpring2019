@@ -18,7 +18,7 @@ public class BulletSpawner : MonoBehaviour
         timeLeft -= Time.deltaTime;
         
         if (timeLeft <= 0)
-        {
+        { 
             Destroy(this.gameObject);
         }
 

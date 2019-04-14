@@ -10,6 +10,7 @@ public class SimplePlayerShoot : MonoBehaviour
     public bool can_shoot = true;
     public float timeLeft = 1.0f;
     public float time_scale = 1.0f;
+    public string player = "0";
 
     void Start()
     {
@@ -19,7 +20,7 @@ public class SimplePlayerShoot : MonoBehaviour
     void Update()
     {
         timeLeft -= Time.deltaTime;
-
+        
         if (timeLeft <= 0)
         {
             can_shoot = true;           
@@ -28,7 +29,7 @@ public class SimplePlayerShoot : MonoBehaviour
         {
             can_shoot = false;
         }
-        if (Input.GetKeyDown(fire_key) && can_shoot)
+        if (Input.GetAxis("Fire"+player) != 0 && can_shoot)
         {
             Shoot();
             timeLeft = time_scale;

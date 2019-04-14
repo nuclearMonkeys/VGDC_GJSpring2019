@@ -14,5 +14,6 @@ public class SimplePlayerRotation : MonoBehaviour
         Vector3 rotationVector = new Vector3(0, 0,-angle*moveSpeed);
         Quaternion rotation = Quaternion.Euler(rotationVector);
         this.transform.rotation = rotation;
+        
     }
 }
