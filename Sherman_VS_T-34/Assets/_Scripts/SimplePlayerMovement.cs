@@ -4,49 +4,58 @@ using UnityEngine;
 
 public class SimplePlayerMovement : MonoBehaviour
 {
-    public GameManager gameManager;
     public float speed = 10.0f;
-    public Rigidbody2D rb;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    private Rigidbody2D rb;
+
+    void Awake()
+    {       
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void Awake()
-    {
-        gameManager = FindObjectOfType<GameManager>();
-        //gameManager.playerOne = this.gameObject;
-    }
-
-    // Update is called once per frame
     void Update()
     {
         float translation_horiz = 0f;
         float translation_vert = 0f;
-        if (Input.GetKey("a"))
+
+        if (tag == "PlayerOne")
         {
-            translation_horiz = -speed * Time.deltaTime;
+            //if (Input.GetKey("a"))
+            //{
+            //    translation_horiz = -speed * Time.deltaTime;
+            //}
+            //if (Input.GetKey("d"))
+            //{
+            //    translation_horiz = speed * Time.deltaTime;
+            //}
+            //if (Input.GetKey("w"))
+            //{
+            //    translation_vert = speed * Time.deltaTime;
+            //}
+            //if (Input.GetKey("s"))
+            //{
+            //    translation_vert = -speed * Time.deltaTime;
+            //}
+
         }
-        if (Input.GetKey("d"))
+        else if (tag == "PlayerTwo")
         {
-             translation_horiz = speed * Time.deltaTime;
+            //if (Input.GetKey("j"))
+            //{
+            //    translation_horiz = -speed * Time.deltaTime;
+            //}
+            //if (Input.GetKey("l"))
+            //{
+            //    translation_horiz = speed * Time.deltaTime;
+            //}
+            //if (Input.GetKey("i"))
+            //{
+            //    translation_vert = speed * Time.deltaTime;
+            //}
+            //if (Input.GetKey("k"))
+            //{
+            //    translation_vert = -speed * Time.deltaTime;
+            //}
         }
-        if (Input.GetKey("w"))
-        {
-             translation_vert = speed * Time.deltaTime;
-        }
-        if (Input.GetKey("s"))
-        {
-             translation_vert = -speed * Time.deltaTime;
-        }
-        //transform.Translate(translation_horiz, translation_vert, 0);
         rb.velocity = new Vector3(translation_horiz, translation_vert);
-        
-        
-        //string test = Input.GetAxis("Vertical1") + " vertical 1";
-        //string[] astrJoysticks = Input.GetJoystickNames();
-        //Debug.Log(astrJoysticks);
     }
 }

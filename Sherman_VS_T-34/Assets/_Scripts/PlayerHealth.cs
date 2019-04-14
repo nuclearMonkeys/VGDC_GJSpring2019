@@ -5,17 +5,19 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int maxHealth = 120;
+    public int maxHealth = 100;
     public int currentHealth = 100;
 
     public GameObject playerSlider;
 
     private void Start()
     {
-        if (this.CompareTag("PlayerOne")) {
+        if (CompareTag("PlayerOne"))
+        {
             playerSlider = GameObject.FindGameObjectWithTag("PlayerOneHealth");
         }
-        if (this.CompareTag("PlayerTwo")) {
+        if (CompareTag("PlayerTwo"))
+        {
             playerSlider = GameObject.FindGameObjectWithTag("PlayerTwoHealth");
         }
     }
@@ -23,10 +25,10 @@ public class PlayerHealth : MonoBehaviour
     private void Update()
     {
         playerSlider.GetComponent<Slider>().value = currentHealth;
-        if (currentHealth  <= 0 ) {
-            
-            Destroy(this.gameObject);
+
+        if (currentHealth <= 0 )
+        {   
+            Destroy(gameObject);
         }
     }
-
 }

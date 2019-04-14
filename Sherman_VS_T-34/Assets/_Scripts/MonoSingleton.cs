@@ -5,29 +5,28 @@ using UnityEngine.SceneManagement;
 
 public class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T>
 {
-    private static MonoSingleton<T> instance;
-    public static MonoSingleton<T> Instance
+    private static T instance;
+    public static T Instance
     {
         get
         {
             if (instance == null)
             {
-                throw new System.Exception("Instance not found!");
+                instance = FindObjectOfType<T>();
+
+                if (instance == null)
+                {
+                    GameObject obj = new GameObject(typeof(T).Name);
+                    instance = obj.AddComponent<T>();
+                }
             }
-            else
-            {
-                return instance;
-            }
-        }
-        private set
-        {
-            instance = value;
+            return instance;
         }
     }
 
     private void Awake()
     {
-        instance = this;
+        instance = this as T;
         DontDestroyOnLoad(gameObject);
         OnAwake();
     }
