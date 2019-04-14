@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoSingleton<GameManager>
 {
     float currentTime = 0f;
-    float startingTime = 10f;
+    float startingTime = 61f;
 
     public bool gameStarted = false;
+    public TextMeshProUGUI timerText;
 
     public int numOfShermanWins = 0;
     public int numOfTWins = 0;
@@ -25,13 +28,16 @@ public class GameManager : MonoSingleton<GameManager>
     }
 
     void LateUpdate() {
-        /*
-        currentTime -= 1 * Time.deltaTime;
-        print((int)currentTime);
-        if (currentTime <= 0) {
-            currentTime = 0;
+        if (gameStarted)
+        {
+            
+            currentTime -= 1 * Time.deltaTime;
+            timerText.text = ((int)currentTime).ToString();
+            if (currentTime <= 0)
+            {
+                currentTime = 0;
+            }
         }
-        */
     }
     public void StartGame()
     {
