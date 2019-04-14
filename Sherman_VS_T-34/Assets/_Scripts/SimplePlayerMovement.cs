@@ -28,22 +28,18 @@ public class SimplePlayerMovement : MonoBehaviour
         if (Input.GetKey("a"))
         {
             translation_horiz = -speed * Time.deltaTime;
-            Debug.Log("Left");
         }
         if (Input.GetKey("d"))
         {
              translation_horiz = speed * Time.deltaTime;
-            Debug.Log("Right");
         }
         if (Input.GetKey("w"))
         {
              translation_vert = speed * Time.deltaTime;
-            Debug.Log("Up");
         }
         if (Input.GetKey("s"))
         {
              translation_vert = -speed * Time.deltaTime;
-            Debug.Log("Down");
         }
         //transform.Translate(translation_horiz, translation_vert, 0);
         rb.velocity = new Vector3(translation_horiz, translation_vert);

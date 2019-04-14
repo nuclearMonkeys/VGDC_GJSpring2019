@@ -20,7 +20,7 @@ public class SimplePlayerShoot : MonoBehaviour
     void Update()
     {
         timeLeft -= Time.deltaTime;
-        Debug.Log(can_shoot);
+
         if (timeLeft <= 0)
         {
             can_shoot = true;
