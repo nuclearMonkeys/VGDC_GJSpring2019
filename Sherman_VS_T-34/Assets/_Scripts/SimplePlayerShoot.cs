@@ -6,12 +6,11 @@ public class SimplePlayerShoot : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public GameObject bulletSpawnPoint;
-    public string fire_key = "space";
     public bool can_shoot = true;
     public float timeLeft = 1.0f;
     public float time_scale = 1.0f;
     public string player = "0";
-
+    
     void Start()
     {
         
@@ -29,8 +28,9 @@ public class SimplePlayerShoot : MonoBehaviour
         {
             can_shoot = false;
         }
-        if (Input.GetAxis("Fire"+player) != 0 && can_shoot)
+        if ((Input.GetAxis("Fire"+player) != 0 ||Input.GetKeyDown("space")) && can_shoot)
         {
+            
             Shoot();
             timeLeft = time_scale;
         }
@@ -38,10 +38,13 @@ public class SimplePlayerShoot : MonoBehaviour
 
     void Shoot()
     {
+
         Quaternion parent_rotation = GetComponentInParent<Transform>().rotation;
-        Vector3 p_rot = parent_rotation.eulerAngles;
+        //Vector3 p_rot = parent_rotation.eulerAngles;
+        
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.transform.position, parent_rotation);
         Vector3 localUp = transform.TransformDirection(Vector3.up);
+        Debug.Log(localUp);
         bullet.GetComponent<Rigidbody2D>().velocity = localUp * 20; 
         bullet.transform.rotation = parent_rotation;
     }
