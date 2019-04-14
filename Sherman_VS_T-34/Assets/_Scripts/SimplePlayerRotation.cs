@@ -6,6 +6,7 @@ using System;
 public class SimplePlayerRotation : MonoBehaviour
 {
     public float moveSpeed = 10.0f;
+
     private void Update()
     {
         float horizontal = 0f, vertical = 0f;
@@ -24,7 +25,7 @@ public class SimplePlayerRotation : MonoBehaviour
         float angle = Mathf.Atan2(horizontal, vertical) * Mathf.Rad2Deg;
         Vector3 rotationVector = new Vector3(0, 0, -angle*moveSpeed);
         Quaternion rotation = Quaternion.Euler(rotationVector);
-        this.transform.rotation = rotation;
+        transform.rotation = rotation;
         
     }
 }

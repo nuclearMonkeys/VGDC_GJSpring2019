@@ -4,7 +4,7 @@ public class AbstractBullet : MonoBehaviour
 {
     public float speed;
     private Rigidbody2D rb;
-    public int damage = 10;
+    public int damage;
     public float timeLeft;
 
     void Awake()
@@ -24,15 +24,20 @@ public class AbstractBullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        PlayerHealth otherPHP = other.gameObject.GetComponent<PlayerHealth>();
+
         if (other.gameObject.CompareTag("PlayerOne"))
         {
             GameManager.Instance.numOfTWins++;
-            other.gameObject.GetComponent<PlayerHealth>().currentHealth -= 10;
         }
-        if (other.gameObject.CompareTag("PlayerTwo"))
+        else if (other.gameObject.CompareTag("PlayerTwo"))
         {
             GameManager.Instance.numOfShermanWins++;
-            other.gameObject.GetComponent<PlayerHealth>().currentHealth -= 10;
+        }
+
+        if (other != null)
+        {
+            otherPHP.currentHealth -= damage;
         }
     }
 }

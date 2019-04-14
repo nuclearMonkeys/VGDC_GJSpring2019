@@ -7,6 +7,7 @@ public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth = 100;
+    public bool isInvincible = false;
 
     public GameObject playerSlider;
 
