@@ -10,7 +10,7 @@ public class SimplePlayerShoot : MonoBehaviour
     public bool can_shoot = true;
     public float timeLeft = 1.0f;
     public float time_scale = 1.0f;
-    public string player = "0";
+    public string player = "1";
     public int damagePerBullet = 0;
 
     void Start()

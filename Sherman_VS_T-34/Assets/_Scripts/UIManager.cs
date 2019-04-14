@@ -49,13 +49,13 @@ public class UIManager : MonoSingleton<UIManager>
     {
         if (i == 1)
         {
-            module.horizontalAxis = "LHor1";
-            module.verticalAxis = "LVert1";
+            module.horizontalAxis = "DHor1";
+            module.verticalAxis = "DVert1";
         }
         else if (i == 2)
         {
-            module.horizontalAxis = "LHor2";
-            module.verticalAxis = "LVert2";
+            module.horizontalAxis = "DHor2";
+            module.verticalAxis = "DVert2";
         }
     }
 }
