@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class SimplePlayerMovement : MonoBehaviour
 {
+    public GameManager gameManager;
     public float speed = 10.0f;
     public Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
+        
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    void Awake()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+        //gameManager.playerOne = this.gameObject;
     }
 
     // Update is called once per frame
