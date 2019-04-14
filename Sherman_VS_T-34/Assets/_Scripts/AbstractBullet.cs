@@ -13,6 +13,6 @@ public class AbstractBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = new Vector2(0, 1f) * speed;
+        //rb.velocity = Vector2.down * speed;
     }
 }
