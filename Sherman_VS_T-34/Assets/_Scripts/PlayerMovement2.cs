@@ -16,7 +16,7 @@ public class PlayerMovement2 : MonoBehaviour
     void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
-        gameManager.gameStarted = true;
+        //gameManager.gameStarted = true;
         //gameManager.playerTwo = this.gameObject;
     }
 
