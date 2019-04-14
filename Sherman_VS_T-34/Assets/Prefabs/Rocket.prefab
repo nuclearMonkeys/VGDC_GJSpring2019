@@ -13,7 +13,9 @@ GameObject:
   - component: {fileID: 4365370006037672787}
   - component: {fileID: 607541384227273776}
   - component: {fileID: 6003262908518691454}
+  - component: {fileID: 8296848776660697733}
   - component: {fileID: 7620153828756295904}
+  - component: {fileID: 7837349818758888401}
   m_Layer: 0
   m_Name: Rocket
   m_TagString: Untagged
@@ -111,9 +113,9 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4365370006037672788}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b42250feedec13b4597673dca6a199be, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -142,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9a32df0ed7db1144b1203290363eb0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7620153828756295904
+--- !u!114 &8296848776660697733
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,8 +153,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 4365370006037672788}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37cd6400abb847044baa39cd7f4196e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  rb: {fileID: 0}
+--- !u!114 &7620153828756295904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4365370006037672788}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a90da01a3baa5c445b7f9f9bbf55e887, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 4365370006037672788}
   timeLeft: 2
+--- !u!70 &7837349818758888401
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4365370006037672788}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: b42250feedec13b4597673dca6a199be, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.06, y: 0.08}
+  m_Size: {x: 0.3, y: 0.45}
+  m_Direction: 0

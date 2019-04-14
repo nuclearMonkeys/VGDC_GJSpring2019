@@ -34,10 +34,7 @@ public class AbstractBullet : MonoBehaviour
             Destroy(this);
             gameManager.StartGame();
         }
-        if (other.gameObject.CompareTag("Wall")) {
-            print("hit");
-            speed = -speed;
-        }
+        
         
     }
 }
