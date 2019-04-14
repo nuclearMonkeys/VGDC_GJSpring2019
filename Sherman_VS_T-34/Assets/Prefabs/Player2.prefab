@@ -193,6 +193,8 @@ MonoBehaviour:
   can_shoot: 1
   timeLeft: 1
   time_scale: 1
+  player: 2
+  damagePerBullet: 0
 --- !u!1 &5450091312664417394
 GameObject:
   m_ObjectHideFlags: 0

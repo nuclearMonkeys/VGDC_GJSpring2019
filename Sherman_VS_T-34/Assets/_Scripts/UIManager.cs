@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class UIManager : MonoSingleton<UIManager>
 {
@@ -9,6 +10,7 @@ public class UIManager : MonoSingleton<UIManager>
     public Button[] shopButtons;
     public int curPanelsIndex = 0;
     public int curShopButtonsIndex = 0;
+    public StandaloneInputModule module;
 
     protected override void OnStart()
     {
@@ -41,5 +43,19 @@ public class UIManager : MonoSingleton<UIManager>
         parentColor = shopButtons[curShopButtonsIndex].transform.parent.GetComponent<Image>().color;
         parentColor.a = 1f;
         shopButtons[curShopButtonsIndex].transform.parent.GetComponent<Image>().color = parentColor;
+    }
+
+    public void SetModuleAxes(int i)
+    {
+        if (i == 1)
+        {
+            module.horizontalAxis = "DHor1";
+            module.verticalAxis = "DVert1";
+        }
+        else if (i == 2)
+        {
+            module.horizontalAxis = "DHor2";
+            module.verticalAxis = "DVert2";
+        }
     }
 }
