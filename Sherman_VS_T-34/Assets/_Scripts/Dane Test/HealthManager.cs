@@ -16,7 +16,27 @@ public class HealthManager : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            GameManager.Instance.numOfTWins++;
+            
+            if (currentHealth > 0)
+            {
+                
+                float damage = (1 / (10 * currentHealth + 1));
+
+                currentHealth -= damage;
+                
+            }
+            if (currentHealth <= 0 && (tag == "PlayerOne"))
+            {
+                GameManager.Instance.numOfTWins++;
+                currentHealth = 0f;
+                Debug.Log(GameManager.Instance.numOfTWins++);
+            }
+            if (currentHealth <= 0 && (tag == "PlayerTwo"))
+            {
+                GameManager.Instance.numOfShermanWins++;
+                currentHealth = 0f;
+                Debug.Log(GameManager.Instance.numOfShermanWins++);
+            }
         }
     }
 
