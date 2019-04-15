@@ -12,12 +12,27 @@ EditorBuildSettings:
     path: Assets/Scenes/ShopScene.unity
     guid: 68d64b77b46fe854696a6231c18f4d19
   - enabled: 1
-    path: Assets/Scenes/OscarScene.unity
-    guid: 890e64425825f094881130778e3b4c15
+    path: Assets/Scenes/Level1.unity
+    guid: 8fa8ace64bc61ee408a0a15f13a369e8
   - enabled: 1
-    path: Assets/Scenes/LyndonScene.unity
-    guid: a8373b2fa93b48d4fbac5d2b981a2b94
+    path: Assets/Scenes/Level2.unity
+    guid: 5c57ca750ad07fb4ba7cc99020453b75
   - enabled: 1
-    path: Assets/Scenes/Dane Scene.unity
-    guid: 103cd53be4cd32f4a974028d5ec0d64e
+    path: Assets/Scenes/Level3.unity
+    guid: ef1116b9828b4b742948bfc2998a4da7
+  - enabled: 1
+    path: Assets/Scenes/Level5.unity
+    guid: 955468090def24246a232b61a0f044e3
+  - enabled: 1
+    path: Assets/Scenes/Level6.unity
+    guid: 4d80ff08c4e81474f9c27709d5d75974
+  - enabled: 1
+    path: Assets/Scenes/TheBridge_level7.unity
+    guid: c88645a5c9db1674c8072299e9848089
+  - enabled: 1
+    path: Assets/Scenes/TheGully_Level5.unity
+    guid: 608f63cbf9b6e3245960dffeda6c8648
+  - enabled: 1
+    path: Assets/Scenes/TwoForts_Level6.unity
+    guid: a1d476cb5b5b1094c9e7c16cb8867aa4
   m_configObjects: {}

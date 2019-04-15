@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoSingleton<UIManager>
 {
@@ -11,6 +12,20 @@ public class UIManager : MonoSingleton<UIManager>
     public int curPanelsIndex = 0;
     public int curShopButtonsIndex = 0;
     public StandaloneInputModule module;
+    public EventSystem eSys;
+
+    protected override void OnSceneLoaded(Scene aScene, LoadSceneMode aMode)
+    {
+        if (aScene.buildIndex == 1)
+        {
+            SwitchPanels(2);
+            eSys.firstSelectedGameObject = shopButtons[0].gameObject;
+        }
+        else
+        {
+            SwitchPanels(1);
+        }
+    }
 
     protected override void OnStart()
     {

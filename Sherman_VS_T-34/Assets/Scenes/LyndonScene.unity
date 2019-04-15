@@ -365,9 +365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78907e0c8a9ae7c438363d217c58e4ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
   speed: 10
-  rb: {fileID: 0}
 --- !u!50 &905033176
 Rigidbody2D:
   serializedVersion: 4
@@ -487,15 +485,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7490204758202664909, guid: 522a395d605f7fb43a76d7b08977244b,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7490204758202664898, guid: 522a395d605f7fb43a76d7b08977244b,
         type: 3}
       propertyPath: speed
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7490204758202664909, guid: 522a395d605f7fb43a76d7b08977244b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 522a395d605f7fb43a76d7b08977244b, type: 3}
