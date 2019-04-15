@@ -45,7 +45,6 @@ public class SimplePlayerShoot : MonoBehaviour
         
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.transform.position, parent_rotation);
         Vector3 localUp = transform.TransformDirection(Vector3.up);
-        Debug.Log(localUp);
         bullet.GetComponent<Rigidbody2D>().velocity = localUp * 20; 
         bullet.transform.rotation = parent_rotation;
         bullet.GetComponent<AbstractBullet>().damage = damagePerBullet;

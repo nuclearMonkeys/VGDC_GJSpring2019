@@ -2,21 +2,41 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthManager : MonoBehaviour
+public class HealthManager : MonoSingleton<HealthManager>
 {
-    [SerializeField] private HealthBar healthBar;
+    public Transform bar;
     public float currentHealth = 1f;
+    public GameObject enemyVars;
 
-    // Start is called before the first frame update
-    void Start()
+    protected override void OnStart()
     {
-        healthBar.SetSize(currentHealth);
+        
     }
 
-    // Update is called once per frame
     void Update()
     {
-        healthBar.SetSize(currentHealth);
-        //currentHealth -= 0.01f;
+        if (tag == "PlayerOne")
+        {
+
+        }
+        Vector3 m_scale = bar.localScale;
+        m_scale = new Vector3(currentHealth, m_scale.y, m_scale.z);
+        bar.localScale = m_scale;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Bullet"))
+        {
+            if (currentHealth > 0)
+            {
+                currentHealth -= .1f;
+            }
+            if (currentHealth <= 0)
+            {
+                GameManager.Instance.numOfTWins++;
+                Debug.Log(GameManager.Instance.numOfTWins++);
+            }
+        }
     }
 }
